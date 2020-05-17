@@ -33,8 +33,8 @@
   - [x] Relação entre tabelas com SQlalchemy
   - [x] Flask Migrate
 - Docker
-  - [] Criando Dockerfile
-  - [] Configurando docker-compose
-    - [] Configurando app container
-    - [] Configurando base de dados
-    - [] Configurando nginx
+  - [x] Criando Dockerfile
+  - [x] Configurando docker-compose
+    - [x] Configurando app container
+    - [x] Configurando base de dados
+    - [x] Configurando nginx
