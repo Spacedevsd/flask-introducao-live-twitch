@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  nginx:
+    build: ./nginx/
+    restart: always
+    depends_on:
+      - app
+    links:
+      - app
+    ports:
+      - "80:80"
+  app:
+    build: .
+    container_name: "flask-introducao"
+    command: gunicorn -b 0.0.0.0:8000 -w 4 "app:create_app()"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ".:/usr/app"
+    depends_on:
+      - db
+    links:
+      - db
+    restart: always
+    environment:
+      - FLASK_ENV=production
+      - FLASK_APP=app:create_app
+  db:
+    image: postgres:10
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=flask

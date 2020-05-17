@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block conteudo %}
+    <div class="container mt-5">
+        <div class="card card-body mb-5">
+            {{ render_form(form) }}
+        </div>
+
+        <ul class="list-group list-group-flush">
+            {% for message in messages %}
+            <li i class="list-group-item d-flex justify-content-between">
+                <span class="text-sm text-muted">Author: {{ message.author.name }}</span>
+                <span>{{ message.name }}</span>
+                <span>{{ message.text }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

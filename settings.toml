@@ -1,0 +1,15 @@
+[default]
+SECRET_KEY = "aidjiajsdijasidjaisjdoasjdiajsd09ausdua0udjiajsdp"
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+EXTENSIONS = [
+  "flask_bootstrap:Bootstrap",
+]
+
+[development]
+SQLALCHEMY_DATABASE_URI = 'sqlite:///dev.sqlite'
+
+[production]
+SQLALCHEMY_DATABASE_URI = 'postgresql://docker:docker@db/flask'
+
+[testing]
+SQLALCHEMY_DATABASE_URI = 'sqlite://'

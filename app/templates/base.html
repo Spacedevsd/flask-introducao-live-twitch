@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spacedevs - Introdução ao Flask</title>
+
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    
+    {{ bootstrap.load_css() }}
+    
+    {% endblock %}
+  </head>
+  <body>
+    {% block conteudo %}
+    
+    {% endblock %}
+
+
+    {% block scripts %}
+      {{ bootstrap.load_js() }}
+    {% endblock %}
+  </body>
+</html>

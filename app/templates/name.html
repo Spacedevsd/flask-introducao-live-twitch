@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+    <img src="{{ url_for('static', filename='img/cat.jpg') }}">
+    <h1>Meu nome é: <span class="name">{{ nome }}</span></h1>
+{% endblock %}
